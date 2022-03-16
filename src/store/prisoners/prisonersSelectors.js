@@ -1,0 +1,1 @@
+export const prisonersListSelector = (state) => state.prisoners.prisonersList

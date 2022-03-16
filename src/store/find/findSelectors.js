@@ -1,0 +1,1 @@
+export const findInfo = (state) => state.find
