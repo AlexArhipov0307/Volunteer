@@ -1,8 +1,10 @@
 import HomePageStyled from "./HomePageStyled";
 import {useNavigate} from "react-router-dom";
 import useDeviceSizes from "../hooks/useDeviceSizes";
+import axios from "axios";
 
 const HomePage = () => {
+    axios.get('https://prisoners-e8118-default-rtdb.firebaseio.com/prisoners.json')
     const {isMobileDevice} = useDeviceSizes();
     const navigate = useNavigate()
     return (
