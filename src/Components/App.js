@@ -1,23 +1,20 @@
-import React, {createContext} from "react";
+import React, {createContext, useEffect} from "react";
 import Header from "./header/Header";
 import Main from "./main/Main";
 import useTheme from "../hooks/usePersistedTheme";
 import GlobalStyle from "../styles/globalStyles";
 import { ThemeProvider } from "styled-components";
 import { AppStyled } from "./AppStyled";
-// import {useDispatch} from "react-redux";
+import axios from "axios";
+
 
 
 export const ThemeContext = createContext();
 
-// export const {
-//     Provider: ThemeContextProvider,
-//     Consumer: ThemeContextConsumer,
-// } = createContext();
-
 const App = () => {
 
     const [theme, setTheme] = useTheme();
+    useEffect(()=> axios.post(`${process.env.REACT_APP_BASE_URL}/test.json`, {data:"test"}))
 
 
     return (
